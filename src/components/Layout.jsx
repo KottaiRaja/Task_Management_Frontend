@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import MobileHeader from './MobileHeader';
 
 export default function Layout() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="flex bg-[#0e0c18] min-h-screen w-full overflow-x-hidden">
-      <Sidebar />
-      <main className="flex-1 overflow-y-auto p-6">
-        <Outlet />
-      </main>
+    <div className="relative flex min-h-screen bg-[#0e0c18]">
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <div className="flex-1 flex flex-col">
+        <MobileHeader onMenuClick={() => setSidebarOpen(true)} />
+        <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+          <Outlet />
+        </main>
+
+      </div>
     </div>
   );
 }
