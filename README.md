@@ -1,4 +1,4 @@
-# TaskMaster - Frontend
+# Task Master - Frontend
 
 This repository contains the frontend code for the TaskMaster application, a modern, responsive web-based task management application developed with React and Tailwind CSS.
 
