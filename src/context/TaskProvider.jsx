@@ -3,7 +3,7 @@ import axios from 'axios';
 import { TaskContext, initialState } from './task-context';
 
 // Define the API base URL
-const API_URL = 'http://localhost:5000/api/tasks';
+const API_URL = 'https://task-management-backend-7lkl.onrender.com/api/tasks';
 
 
 // 3. Create the reducer function
